@@ -1,10 +1,9 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DBS Predictor - Input</title>
+    <title>DBS Share Price Predictor</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -17,63 +16,45 @@
             height: 100vh;
             margin: 0;
         }
-        .container {
+        form {
             background-color: rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            width: 90%;
-            max-width: 500px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
-        h1 {
-            margin-bottom: 30px;
-            font-weight: 700;
+        p {
+            margin: 15px 0;
         }
         input[type="number"] {
-            padding: 12px;
-            border-radius: 25px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #fff;
             width: 80%;
             font-size: 16px;
-            margin: 15px 0;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            transition: all 0.3s ease;
-        }
-        input[type="number"]:focus {
-            outline: none;
-            border-color: #ff4081;
-            background: rgba(255, 255, 255, 0.2);
+            margin-bottom: 15px;
         }
         input[type="submit"] {
             background-color: #ff4081;
             color: #fff;
-            padding: 12px 30px;
+            padding: 10px 20px;
             border: none;
-            border-radius: 25px;
+            border-radius: 4px;
             font-size: 16px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
         }
         input[type="submit"]:hover {
             background-color: #ff1c6b;
-            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>DBS Share Price Predictor 📈</h1>
-        <form action="/predict" method="post">
-            <p>Enter USD/SGD Exchange Rate:</p>
-            <input type="number" step="0.0001" name="rates" placeholder="e.g., 1.3500" required>
-            <input type="submit" value="Predict Now">
-        </form>
-    </div>
+    <form action="/" method="post">
+        <p>I am DBS Share Price Predictor-bot, please enter the U.S. to Singapore Dollar Exchange Rate:</p>
+        <p><input type="number" step="0.01" name="rates" placeholder="Enter rate... e.g., 1.25"></p>
+        <p><input type="submit" value="Submit"></p>
+    </form>
+    <p style="text-align: center; margin-top: 20px;">The predicted DBS share price is {{result}}</p>
 </body>
 </html>
-
-
